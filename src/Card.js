@@ -1,9 +1,10 @@
-export default function Card( props ){
+export default function Card( {children, temp} ){
     return(
-        <div className="Card">
-            <h1> {props.dayWeek} </h1>
-            <p>São Paulo</p>
-            <p>19ºC</p>
+        <div className="Card" style={{
+            backgroundColor : 'blue'
+        }}>
+            <h1> {children} </h1>
+            <p> {temp} </p>
         </div>
     )
 }
