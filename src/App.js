@@ -4,8 +4,13 @@ import Card from './Card.js';
 import './App.css';
 
 function App() {
-  let temperatura;
-  const [ stateTemperatura, setStateTemperatura ] = useState(temperatura);
+  const [ data, setData ] = useState({
+    temperature: '',
+    description: '',
+    tempMin: '',
+    tempMax:'',
+  });
+
   const [ stateCity, setStateCity ] = useState();
 
   const callAPI = () => {
@@ -15,21 +20,20 @@ function App() {
       return resposta.json()
     })
       .then((dadoTemperatura) =>{
-        setStateTemperatura(dadoTemperatura.main.temp + ' ºC')
+
+        setData({
+            temperature: dadoTemperatura.main.temp,
+            description: dadoTemperatura.weather[0].description,
+            tempMin: dadoTemperatura.main.temp_min,
+            tempMax: dadoTemperatura.main.temp_max
+          })
+
       })
   
   }
 
   const handleCity = (event) =>{
-    let input = event.target.value
-    
-    if( input != '' ){
-      setStateCity(input);
-    }else{
-      setStateCity('São Paulo')
-    }
-
-
+    setStateCity(event.target.value);
   }
 
   return(
@@ -37,7 +41,12 @@ function App() {
       <input type='text' onChange={handleCity}></input>
       <button onClick={callAPI}>search</button>
 
-      <Card temp={stateTemperatura}>{stateCity}</Card>
+      <Card temp={data.temperature} 
+            desc={data.description}
+            tempMax={data.tempMax}
+            tempMin={data.tempMin}>
+          {stateCity}
+        </Card>
 
     </div>
   )
