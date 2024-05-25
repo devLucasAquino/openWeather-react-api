@@ -5,10 +5,10 @@ import './App.css';
 
 function App() {
   const [ data, setData ] = useState({
-    temperature: '',
+    temperature: '', 
     description: '',
     tempMin: '',
-    tempMax:'',
+    tempMax: '',
   });
 
   const [ stateCity, setStateCity ] = useState();
@@ -38,8 +38,10 @@ function App() {
 
   return(
     <div className='App'>
-      <input type='text' onChange={handleCity}></input>
-      <button onClick={callAPI}>search</button>
+      <div>
+        <input type='text' onChange={handleCity}></input>
+        <button onClick={callAPI}>search</button>
+      </div>
 
       <Card temp={data.temperature} 
             desc={data.description}

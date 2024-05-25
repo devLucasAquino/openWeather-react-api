@@ -4,6 +4,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+
 }
 
 .cardContainer {
@@ -80,6 +81,7 @@ body {
 
 .maxHeading,
 .minHeading {
+  margin: 0;
   font-size: 0.9em;
   font-weight: 600;
   color: white;
@@ -87,6 +89,7 @@ body {
 
 .maxTemp,
 .minTemp {
+  margin: 0;
   font-size: 2em;
   font-weight: 500;
   color: rgb(197, 197, 197);
