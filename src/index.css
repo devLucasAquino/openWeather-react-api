@@ -5,6 +5,7 @@ body {
   justify-content: center;
   flex-direction: row;
   height: 100vh;
+  background-image: linear-gradient(to bottom right, black, #004173);
 }
 
 input{
@@ -56,6 +57,7 @@ button:hover{
   background-image: linear-gradient(to bottom right, black, #004173);
   border: 1px solid rgba(255, 255, 255, 0.089);
   border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card_empty{
