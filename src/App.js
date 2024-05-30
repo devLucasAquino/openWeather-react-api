@@ -48,7 +48,7 @@ function App() {
         <button onClick={callAPI}>search</button>
       </div>
 
-      {stateCity != '' && 
+      {stateCity !== '' && 
         <Card temp={data.temperature} 
               desc={data.description}
               tempMax={data.tempMax}
