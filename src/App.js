@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Card from './Card.js';
+import CardEmpty from './CardEmpty.js';
 
 import './App.css';
 
@@ -58,7 +59,7 @@ function App() {
           </Card>
         }
 
-      {stateCity === '' && <p>Por favor, insira uma cidade</p>}
+      {stateCity === '' && <CardEmpty> Por favor, insira uma cidade!</CardEmpty>}
 
       
 
