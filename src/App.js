@@ -9,9 +9,10 @@ function App() {
     description: '',
     tempMin: '',
     tempMax: '',
+    country: '',
   });
 
-  const [ stateCity, setStateCity ] = useState();
+  const [ stateCity, setStateCity ] = useState('');
 
   const callAPI = () => {
     
@@ -20,15 +21,17 @@ function App() {
       return resposta.json()
     })
       .then((dadoTemperatura) =>{
-
+        
         setData({
             temperature: dadoTemperatura.main.temp,
             description: dadoTemperatura.weather[0].description,
             tempMin: dadoTemperatura.main.temp_min,
-            tempMax: dadoTemperatura.main.temp_max
+            tempMax: dadoTemperatura.main.temp_max,
+            country: dadoTemperatura.sys.country,
           })
 
       })
+
   
   }
 
@@ -36,19 +39,28 @@ function App() {
     setStateCity(event.target.value);
   }
 
-  return(
+    return(
+    
     <div className='App'>
       <div>
         <input type='text' onChange={handleCity}></input>
         <button onClick={callAPI}>search</button>
       </div>
 
-      <Card temp={data.temperature} 
-            desc={data.description}
-            tempMax={data.tempMax}
-            tempMin={data.tempMin}>
-          {stateCity}
-        </Card>
+      {stateCity != '' && 
+        <Card temp={data.temperature} 
+              desc={data.description}
+              tempMax={data.tempMax}
+              tempMin={data.tempMin}
+              country={data.country}>
+              
+            {stateCity}
+          </Card>
+        }
+
+      {stateCity === '' && <p>Por favor, insira uma cidade</p>}
+
+      
 
     </div>
   )

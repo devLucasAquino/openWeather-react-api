@@ -1,20 +1,21 @@
-export default function Card( {children, temp, desc, tempMin, tempMax} ){
+export default function Card( {children, temp, desc, tempMin, tempMax, country} ){
     return(
         <div className="cardContainer">
 
-            <div class="card">
-                <p class="city">{children}</p>
-                <p class="temp">{temp}</p>
-                <p class="weather">{desc}</p>
+            <div className="card">
+                <p className="city">{children}</p>
+                <p className="country">{country}</p>
+                <p className="temp">{temp}</p>
+                <p className="weather">{desc}</p>
                 
-                <div class="minmaxContainer">
-                <div class="min">
-                    <p class="minHeading">Min</p>
-                    <p class="minTemp">{tempMin}</p>
+                <div className="minmaxContainer">
+                <div className="min">
+                    <p className="minHeading">Min</p>
+                    <p className="minTemp">{tempMin}</p>
                 </div>
-                <div class="max">
-                    <p class="maxHeading">Max</p>
-                    <p class="maxTemp">{tempMax}</p>
+                <div className="max">
+                    <p className="maxHeading">Max</p>
+                    <p className="maxTemp">{tempMax}</p>
                 </div>
                 </div>
             </div>

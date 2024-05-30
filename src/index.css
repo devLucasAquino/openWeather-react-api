@@ -4,15 +4,18 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+ 
 
 }
 
 .cardContainer {
   width: fit-content;
   position: relative;
+  height: 30rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .cardContainer > p {
@@ -22,7 +25,7 @@ body {
 .card {
   position: relative;
   width: 220px;
-  height: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,9 +33,9 @@ body {
   padding: 20px 10px;
   border-radius: 10px;
   backdrop-filter: blur(30px);
-  background-color: rgb(65, 65, 65);
+  background-image: linear-gradient(to bottom right, black, #004173);
   border: 1px solid rgba(255, 255, 255, 0.089);
-  cursor: pointer;
+  border: none;
 }
 
 .city {
@@ -53,6 +56,12 @@ body {
 .temp {
   font-size: 2rem;
   color: white;
+}
+
+.country{
+  font-size: 1rem;
+  color: white;
+  font-weight: 900;
 }
 
 .minmaxContainer {
