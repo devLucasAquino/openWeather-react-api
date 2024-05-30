@@ -24,15 +24,14 @@ function App() {
       .then((dadoTemperatura) =>{
         
         setData({
-            temperature: dadoTemperatura.main.temp,
+            temperature: ((dadoTemperatura.main.temp % 1 >= 0.5) ? Math.ceil(dadoTemperatura.main.temp) + 'ºC' : Math.floor(dadoTemperatura.main.temp) + 'ºC'),
             description: dadoTemperatura.weather[0].description,
-            tempMin: dadoTemperatura.main.temp_min,
-            tempMax: dadoTemperatura.main.temp_max,
+            tempMin: dadoTemperatura.main.temp_min + 'º',
+            tempMax: dadoTemperatura.main.temp_max + 'º',
             country: dadoTemperatura.sys.country,
           })
 
       })
-
   
   }
 
@@ -43,6 +42,7 @@ function App() {
     return(
     
     <div className='App'>
+
       <div>
         <input type='text' onChange={handleCity}></input>
         <button onClick={callAPI}>search</button>

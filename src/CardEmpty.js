@@ -4,7 +4,7 @@ export default function CardEmpty({children}){
          <p className="card_empty" style={{
             color: 'red',
             fontWeight: 900,
-            fontSize: 28,
+            fontSize: 22,
         }}>{children}</p>
        
     )
